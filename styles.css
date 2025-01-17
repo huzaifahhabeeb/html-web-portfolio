@@ -1,6 +1,7 @@
 :root {
     --color-accent: #5eead4;
     --color-highlight: #e2e8f0;
+    --background-accent:rgba(45, 212, 191, .1);
 }
 
 * {
@@ -8,6 +9,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter' , sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* any automated scrolling will be smooth */
 }
 
 p, h2 {
@@ -36,9 +41,9 @@ body {
 }
 
 .underlay {
-    position: fixed; /*always there basically*/
+    position: fixed; /* always there basically */
     background: #172554;
-    inset: 0; /*it takes up full screen*/
+    inset: 0; /* it takes up full screen */
     opacity: 0.15;
 }
 
@@ -67,7 +72,7 @@ header a {
 }
 
 header h1 {
-    font-weight: 600; /*changes thickness*/
+    font-weight: 600; /* changes thickness */
 }
 
 header h4 {
@@ -77,13 +82,13 @@ header h4 {
 main {
     display: flex;
     flex-direction: column;
-    gap: 6rem; /* all 3 main sections have a 6rem gap now*/
+    gap: 6rem; /* all 3 main sections have a 6rem gap now */
 }
 
 section {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /*spaced out the h2 and paragraphs div*/
+    gap: 2rem; /*  spaced out the h2 and paragraphs div */
 }
 
 section h2,
@@ -101,21 +106,21 @@ section h2,
 
 .sticky-header::before {
     content: '';
-    position: absolute; /*has to have its parent element as position relative to stick to it*/
-    inset: 0; /*copies parent element's dimensions*/
-    background: #101a31; /*same background colour of page, but is its own little bar*/
-    opacity: 0.96; /*see through*/
+    position: absolute; /* has to have its parent element as position relative to stick to it */
+    inset: 0; /* copies parent element's dimensions */
+    background: #101a31; /* same background colour of page, but is its own little bar */
+    opacity: 0.96; /* see through */
 }
 
 .sticky-header h2 {
-    position: relative; /*has to be relative for this to work*/
-    z-index: 2; /*order of which things appear on top*/
+    position: relative; /* has to be relative for this to work */
+    z-index: 2; /* order of which things appear on top */
 }
 
 .about-contents {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /*spaced out the paragraphs*/
+    gap: 1rem; /* spaced out the paragraphs */
 }
 
 .about-contents p {
@@ -152,8 +157,8 @@ section h2,
 
 .anchor-text {
     color: var(--color-highlight);
-    text-decoration: none; /*got rid of underline*/
-    transition-duration: 200ms; /*doesnt instantly change colour*/
+    text-decoration: none; /* got rid of underline /
+    transition-duration: 200ms; /* doesnt instantly change colour */
 }
 
 .anchor-text:hover {
@@ -185,7 +190,7 @@ section h2,
 .tag {
     padding: 0.25rem;
     border-radius: 0.5rem;
-    background-color: rgba(45, 212, 191, .1);
+    background-color: var(--background-accent);
 }
 
 .tag p {
@@ -204,7 +209,7 @@ section h2,
 }
 
 .project-image-container img {
-    object-fit: cover; /*takes full container considering aspect ratio and crops accordingly*/
+    object-fit: cover; /* takes full container considering aspect ratio and crops accordingly */
     width: 100%;
     height: 100%;
 }
@@ -219,31 +224,47 @@ section h2,
 .project-archive-link {
     position: relative;
     color: var(--color-highlight);
-    text-decoration: none; /*got rid of underline*/
-    transition-duration: 200ms; /*doesnt instantly change colour*/
-    margin-right: auto; /*only takes up necessary amount on right*/
+    text-decoration: none; /* got rid of underline */
+    transition-duration: 200ms; /* doesnt instantly change colour */
+    margin-right: auto; /* only takes up necessary amount on right */
 }
 
 .project-archive-link span {
-    transition-duration: 200ms; /*doesnt instantly change colour*/
+    transition-duration: 200ms; /* doesnt instantly change colour */
 }
 
 .project-archive-link:hover span {
-    padding-left: 0.5rem; /*Bounces when hovering*/
+    padding-left: 0.5rem; /* Bounces when hovering */
 
 }
 
 .project-archive-link::after {
-    position: absolute; /*has to have its parent element as position relative to stick to it*/
-    content: ""; /*has to have something or else wont show*/
-    left: 0; /*starts at left*/
-    width: 100%; /*takes up full width of parent*/
-    bottom: 0; /*starts at bottom*/
+    position: absolute; /* has to have its parent element as position relative to stick to it */
+    content: ""; /* has to have something or else wont show */
+    left: 0; /* starts at left */
+    width: 100%; /* takes up full width of parent */
+    bottom: 0; /* starts at bottom */
     height: 1.5px; 
     background-color: transparent; 
-    transition-duration: 200ms; /*time for transition to take place*/
+    transition-duration: 200ms; /* time for transition to take place */
 }
 
 .project-archive-link:hover::after {
     background-color: var(--color-accent);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between; /* pushes to edges of row */
+    align-items: flex-start; /* pushes to start of container i.e the top here */
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.scroll-to-top {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--color-accent);
 }
