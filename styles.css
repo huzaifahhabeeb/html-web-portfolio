@@ -265,6 +265,17 @@ footer p {
 
 .scroll-to-top {
     text-decoration: none;
-    background-color: transparent;
+    background-color: var(--background-accent); 
     color: var(--color-accent);
+    padding: 0 0.75rem;
+    aspect-ratio: 1/1; /* makes it into a circle, not horizontal oval */
+    display: grid; /* easiest way to center a single element */
+    place-items: center; /* centers it inside the background */
+    border-radius: 100%;
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.6;
 }
