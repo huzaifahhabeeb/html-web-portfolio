@@ -255,6 +255,8 @@ section h2,
 
 footer {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: space-between; /* pushes to edges of row */
     align-items: flex-start; /* pushes to start of container i.e the top here */
 }
