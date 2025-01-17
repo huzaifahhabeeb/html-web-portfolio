@@ -96,13 +96,15 @@ section h2,
 .sticky-header {
     position: sticky;
     top: 0;
+    padding: 1rem 0;
 }
 
 .sticky-header::before {
     content: '';
     position: absolute; /*has to have its parent element as position relative to stick to it*/
     inset: 0; /*copies parent element's dimensions*/
-    background: #0f172a;
+    background: #101a31; /*same background colour of page, but is its own little bar*/
+    opacity: 0.96; /*see through*/
 }
 
 .sticky-header h2 {
