@@ -54,6 +54,30 @@ footer {
     z-index: 10;
 }
 
+.social-link-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link {
+    font-size: 1.3rem;
+    color: inherit; /* gives it the colour of the rest of the document */
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: var(--color-highlight);
+}
+
+nav a{
+    font-size: 0.9rem;
+}
+
+nav {
+    display: none;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -180,6 +204,10 @@ section h2,
     font-weight: 400;
 }
 
+.anchor-icon {
+    padding-left: 0.3rem;
+}
+
 .tag-container {
     display: flex;
     flex-wrap: wrap;
@@ -205,7 +233,7 @@ section h2,
     overflow: hidden;
     aspect-ratio: 16 / 9;
     order: 2;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 }
 
 .project-image-container img {
@@ -281,3 +309,114 @@ footer p {
 .scroll-to-top:hover {
     opacity: 0.6;
 }
+
+@media (min-width:640px) {
+    .project-card,
+    .experience-card {
+        grid-template-columns: repeat(4, minmax(0, 1fr)); /* changes it to make 4 columns */
+    }
+
+    .card-column {
+        grid-column: span 3 / span 3; /* makes it take 3 columns */
+    }
+
+    .project-image-container {
+        order: 0;
+    }
+
+    .social-link-container {
+        gap: 1.5rem;
+    }
+
+    .social-link-container i {
+        font-size: 2rem;
+    }
+
+    header {
+        max-width: unset;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h4 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+}
+
+@media (min-width:1024px) {
+    body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem; /* makes everything a bit more snug */
+        padding: 6rem;
+        padding-top: 0rem; /* needed to add this or else it has that extra gap before sticking */
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        margin-left: auto; /* keeps it aligned */
+        height: 100vh; /* makes the height only what the screen is, otherwise the sticky header wouldn't work */
+        padding-bottom: 6rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h4 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+    nav {
+        display: flex; /* was previously set to none */
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1; /* means it turns really greedy and takes up as much space as it can so pushes links to bottom */
+    }
+
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    .social-link-container {
+        gap: 1.5rem;
+    }
+
+    .social-link-container i {
+        font-size: 2rem;
+    }
+    
+    header,
+    main {
+        padding-top: 6rem;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    main {
+        margin-right: auto; /* keeps it aligned */
+    }
+
+    .sticky-header {
+        display: none;
+    }
+
+    footer {
+        grid-column: span 2 / span 2; /* takes up both columns now */
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto; /* keeps it in middle */
+        width: 100%;
+    }
+} 
